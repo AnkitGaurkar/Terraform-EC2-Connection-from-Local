@@ -48,8 +48,9 @@ resource "aws_instance" "my_instance" {
 
  #count = 2 @Metakey-word/MetaArgument 
 for_each = tomap({
-  Ankit-Junoon-automate-micro="t3.micro"
-  Ankit-Junoon-automate-small="t3.small"                  #@MetaArgument with Key and Value pair
+  #Ankit-Junoon-automate-micro="t3.micro"
+  Ankit-Junoon-automate-small="t3.small" 
+                 #@MetaArgument with Key and Value pair
 })
 
 depends_on = [aws_security_group.my_security_group,aws_key_pair.my_key]
@@ -71,6 +72,7 @@ depends_on = [aws_security_group.my_security_group,aws_key_pair.my_key]
   
 tags = {
   #Name =var.instance_name
-  Name =each.key
+  Name = each.key
+  Environment = var.env
 }
 }

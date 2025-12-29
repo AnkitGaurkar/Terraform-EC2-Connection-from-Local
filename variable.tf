@@ -25,6 +25,6 @@ variable "instance_name" {
   
 }
 variable "env" {
-    default = "dev"
+    default = "prd"
     type =string
 }
