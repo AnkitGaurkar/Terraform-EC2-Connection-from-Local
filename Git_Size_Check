@@ -1,0 +1,13 @@
+for git size check
+du -sh .git
+
+sudo apt install git-filter-repo
+
+git filter-repo --force --path .terraform --path terraform.tfstate --path terraform.tfstate.backup --invert-paths
+Parsed 2 commits
+
+
+ git push origin master --force
+
+for perticular file size
+du -sh * | sort -h
